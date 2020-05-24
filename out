@@ -1,0 +1,1143 @@
+handle_block: (send
+  (send nil :resource
+    (str "libpipeline")) :stage) | (args) | [s(:begin,
+  s(:send, nil, :system,
+    s(:str, "./configure"),
+    s(:str, "--disable-dependency-tracking"),
+    s(:str, "--disable-silent-rules"),
+    s(:dstr,
+      s(:str, "--prefix="),
+      s(:begin,
+        s(:send, nil, :buildpath)),
+      s(:str, "/libpipeline")),
+    s(:str, "--enable-static"),
+    s(:str, "--disable-shared")),
+  s(:send, nil, :system,
+    s(:str, "make")),
+  s(:send, nil, :system,
+    s(:str, "make"),
+    s(:str, "install")))]
+=> send | [] | begin
+(install) handle_resource: (send nil :resource
+  (str "libpipeline")) | (begin
+  (send nil :system
+    (str "./configure")
+    (str "--disable-dependency-tracking")
+    (str "--disable-silent-rules")
+    (dstr
+      (str "--prefix=")
+      (begin
+        (send nil :buildpath))
+      (str "/libpipeline"))
+    (str "--enable-static")
+    (str "--disable-shared"))
+  (send nil :system
+    (str "make"))
+  (send nil :system
+    (str "make")
+    (str "install"))) | false
+$(PKG_resource_ libpipeline)
++++ (install) (block) handle_resource:
+on_send: (send
+  (const nil :ENV) :[]=
+  (str "libpipeline_CFLAGS")
+  (dstr
+    (str "-I")
+    (begin
+      (send nil :buildpath))
+    (str "/libpipeline/include")))
+(install) handle_send: (const nil :ENV) | [:[]=, s(:str, "libpipeline_CFLAGS"), s(:dstr,
+  s(:str, "-I"),
+  s(:begin,
+    s(:send, nil, :buildpath)),
+  s(:str, "/libpipeline/include"))]
++++ (handle_send)
+(install) handle_symbol: (const nil :ENV) | [:[]=, s(:str, "libpipeline_CFLAGS"), s(:dstr,
+  s(:str, "-I"),
+  s(:begin,
+    s(:send, nil, :buildpath)),
+  s(:str, "/libpipeline/include"))]
+(install) handle_child: (const nil :ENV)
+handle_child +++ ENV | const | (const nil :ENV)
+handle_symbol => Symbol ENV => [:[]=, s(:str, "libpipeline_CFLAGS"), s(:dstr,
+  s(:str, "-I"),
+  s(:begin,
+    s(:send, nil, :buildpath)),
+  s(:str, "/libpipeline/include"))]
+(install) handle_child: [s(:dstr,
+  s(:str, "-I"),
+  s(:begin,
+    s(:send, nil, :buildpath)),
+  s(:str, "/libpipeline/include"))]
+(install) handle_child: (dstr
+  (str "-I")
+  (begin
+    (send nil :buildpath))
+  (str "/libpipeline/include"))
+(install) handle_child: (dstr
+  (str "-I")
+  (begin
+    (send nil :buildpath))
+  (str "/libpipeline/include"))
+(install) handle_child: (str "-I")
+handle_child +++ -I | str | (str "-I")
+(install) handle_child: (begin
+  (send nil :buildpath))
+(install) handle_child: [s(:send, nil, :buildpath)]
+(install) handle_child: (send nil :buildpath)
+(install) handle_send: buildpath | []
++++ (handle_send)
+(install) handle_symbol: buildpath | []
+handle_symbol => Symbol buildpath => []
+(install) handle_child: 
+handle_symbol: result => buildpath
+	 =>  / []
+(handle_send) result: buildpath
+handle_child +++ buildpath | send | (send nil :buildpath)
+handle_child +++ [:buildpath] | begin | (begin
+  (send nil :buildpath))
+(install) handle_child: (str "/libpipeline/include")
+handle_child +++ /libpipeline/include | str | (str "/libpipeline/include")
+handle_child +++ ["-I", [:buildpath], "/libpipeline/include"] | dstr | (dstr
+  (str "-I")
+  (begin
+    (send nil :buildpath))
+  (str "/libpipeline/include"))
+handle_symbol: result => {"libpipeline_CFLAGS"=>[["-I", [:buildpath], "/libpipeline/include"]]}
+	 => [s(:dstr,
+  s(:str, "-I"),
+  s(:begin,
+    s(:send, nil, :buildpath)),
+  s(:str, "/libpipeline/include"))] / [["-I", [:buildpath], "/libpipeline/include"]]
+(handle_send) result: {"libpipeline_CFLAGS"=>[["-I", [:buildpath], "/libpipeline/include"]]}
+on_send: (send
+  (const nil :ENV) :[]=
+  (str "libpipeline_LIBS")
+  (dstr
+    (str "-L")
+    (begin
+      (send nil :buildpath))
+    (str "/libpipeline/lib -lpipeline")))
+(install) handle_send: (const nil :ENV) | [:[]=, s(:str, "libpipeline_LIBS"), s(:dstr,
+  s(:str, "-L"),
+  s(:begin,
+    s(:send, nil, :buildpath)),
+  s(:str, "/libpipeline/lib -lpipeline"))]
++++ (handle_send)
+(install) handle_symbol: (const nil :ENV) | [:[]=, s(:str, "libpipeline_LIBS"), s(:dstr,
+  s(:str, "-L"),
+  s(:begin,
+    s(:send, nil, :buildpath)),
+  s(:str, "/libpipeline/lib -lpipeline"))]
+(install) handle_child: (const nil :ENV)
+handle_child +++ ENV | const | (const nil :ENV)
+handle_symbol => Symbol ENV => [:[]=, s(:str, "libpipeline_LIBS"), s(:dstr,
+  s(:str, "-L"),
+  s(:begin,
+    s(:send, nil, :buildpath)),
+  s(:str, "/libpipeline/lib -lpipeline"))]
+(install) handle_child: [s(:dstr,
+  s(:str, "-L"),
+  s(:begin,
+    s(:send, nil, :buildpath)),
+  s(:str, "/libpipeline/lib -lpipeline"))]
+(install) handle_child: (dstr
+  (str "-L")
+  (begin
+    (send nil :buildpath))
+  (str "/libpipeline/lib -lpipeline"))
+(install) handle_child: (dstr
+  (str "-L")
+  (begin
+    (send nil :buildpath))
+  (str "/libpipeline/lib -lpipeline"))
+(install) handle_child: (str "-L")
+handle_child +++ -L | str | (str "-L")
+(install) handle_child: (begin
+  (send nil :buildpath))
+(install) handle_child: [s(:send, nil, :buildpath)]
+(install) handle_child: (send nil :buildpath)
+(install) handle_send: buildpath | []
++++ (handle_send)
+(install) handle_symbol: buildpath | []
+handle_symbol => Symbol buildpath => []
+(install) handle_child: 
+handle_symbol: result => buildpath
+	 =>  / []
+(handle_send) result: buildpath
+handle_child +++ buildpath | send | (send nil :buildpath)
+handle_child +++ [:buildpath] | begin | (begin
+  (send nil :buildpath))
+(install) handle_child: (str "/libpipeline/lib -lpipeline")
+handle_child +++ /libpipeline/lib -lpipeline | str | (str "/libpipeline/lib -lpipeline")
+handle_child +++ ["-L", [:buildpath], "/libpipeline/lib -lpipeline"] | dstr | (dstr
+  (str "-L")
+  (begin
+    (send nil :buildpath))
+  (str "/libpipeline/lib -lpipeline"))
+handle_symbol: result => {"libpipeline_LIBS"=>[["-L", [:buildpath], "/libpipeline/lib -lpipeline"]]}
+	 => [s(:dstr,
+  s(:str, "-L"),
+  s(:begin,
+    s(:send, nil, :buildpath)),
+  s(:str, "/libpipeline/lib -lpipeline"))] / [["-L", [:buildpath], "/libpipeline/lib -lpipeline"]]
+(handle_send) result: {"libpipeline_LIBS"=>[["-L", [:buildpath], "/libpipeline/lib -lpipeline"]]}
+on_lvasgn:
+(lvasgn :args
+  (array
+    (str "--disable-dependency-tracking")
+    (str "--disable-silent-rules")
+    (dstr
+      (str "--prefix=")
+      (begin
+        (send nil :prefix)))
+    (str "--disable-cache-owner")
+    (str "--disable-setuid")
+    (str "--program-prefix=g")))
+(install) handle_child: (array
+  (str "--disable-dependency-tracking")
+  (str "--disable-silent-rules")
+  (dstr
+    (str "--prefix=")
+    (begin
+      (send nil :prefix)))
+  (str "--disable-cache-owner")
+  (str "--disable-setuid")
+  (str "--program-prefix=g"))
+(install) handle_child: (str "--disable-dependency-tracking")
+handle_child +++ --disable-dependency-tracking | str | (str "--disable-dependency-tracking")
+(install) handle_child: (str "--disable-silent-rules")
+handle_child +++ --disable-silent-rules | str | (str "--disable-silent-rules")
+(install) handle_child: (dstr
+  (str "--prefix=")
+  (begin
+    (send nil :prefix)))
+(install) handle_child: (dstr
+  (str "--prefix=")
+  (begin
+    (send nil :prefix)))
+(install) handle_child: (str "--prefix=")
+handle_child +++ --prefix= | str | (str "--prefix=")
+(install) handle_child: (begin
+  (send nil :prefix))
+(install) handle_child: [s(:send, nil, :prefix)]
+(install) handle_child: (send nil :prefix)
+(install) handle_send: prefix | []
++++ (handle_send)
+(install) handle_symbol: prefix | []
+handle_symbol => Symbol prefix => []
+(install) handle_child: 
+handle_symbol: result => prefix
+	 =>  / []
+(handle_send) result: prefix
+handle_child +++ prefix | send | (send nil :prefix)
+handle_child +++ [:prefix] | begin | (begin
+  (send nil :prefix))
+handle_child +++ ["--prefix=", [:prefix]] | dstr | (dstr
+  (str "--prefix=")
+  (begin
+    (send nil :prefix)))
+(install) handle_child: (str "--disable-cache-owner")
+handle_child +++ --disable-cache-owner | str | (str "--disable-cache-owner")
+(install) handle_child: (str "--disable-setuid")
+handle_child +++ --disable-setuid | str | (str "--disable-setuid")
+(install) handle_child: (str "--program-prefix=g")
+handle_child +++ --program-prefix=g | str | (str "--program-prefix=g")
+handle_lvasgn: args == ["--disable-dependency-tracking", "--disable-silent-rules", ["--prefix=", [:prefix]], "--disable-cache-owner", "--disable-setuid", "--program-prefix=g"]
+on_op_asgn:
+(op-asgn
+  (lvasgn :args) :+
+  (array
+    (str "--fetch")
+    (str "protobuf")))
+(install) handle_child: (lvasgn :args)
+(install) handle_child: args
+(install) handle_symbol: args | 
+handle_symbol => Symbol args => 
+(install) handle_child: 
+handle_symbol: result => args
+	 =>  / []
+handle_child +++ args | symbol | args
+(install) handle_child: (array
+  (str "--fetch")
+  (str "protobuf"))
+(install) handle_child: (str "--fetch")
+handle_child +++ --fetch | str | (str "--fetch")
+(install) handle_child: (str "protobuf")
+handle_child +++ protobuf | str | (str "protobuf")
+handle_op_asgn: [:args] | + | ["--fetch", "protobuf"]
+on_lvasgn:
+(lvasgn :foo
+  (str "bar"))
+(install) handle_child: (str "bar")
+handle_child +++ bar | str | (str "bar")
+handle_lvasgn: foo == ["bar"]
+on_send: (send nil :system
+  (str "./configure")
+  (splat
+    (lvar :args)))
+(install) handle_send: system | [s(:str, "./configure"), s(:splat,
+  s(:lvar, :args))]
++++ (handle_send)
+(install) handle_symbol: system | [s(:str, "./configure"), s(:splat,
+  s(:lvar, :args))]
+handle_symbol => Symbol system => [s(:str, "./configure"), s(:splat,
+  s(:lvar, :args))]
+(install) handle_child: [s(:str, "./configure"), s(:splat,
+  s(:lvar, :args))]
+(install) handle_child: (str "./configure")
+handle_child +++ ./configure | str | (str "./configure")
+(install) handle_child: (splat
+  (lvar :args))
+(install) handle_child: (splat
+  (lvar :args))
+(install) handle_child: (lvar :args)
+handle_child +++ args | lvar | (lvar :args)
+handle_child +++ [:args] | splat | (splat
+  (lvar :args))
+handle_symbol: result => {:system=>["./configure", [:args]]}
+	 => [s(:str, "./configure"), s(:splat,
+  s(:lvar, :args))] / ["./configure", [:args]]
+(handle_send) result: {:system=>["./configure", [:args]]}
+on_send: (send nil :system
+  (str "make")
+  (dstr
+    (str "CFLAGS=")
+    (begin
+      (send
+        (const nil :ENV) :cflags))))
+(install) handle_send: system | [s(:str, "make"), s(:dstr,
+  s(:str, "CFLAGS="),
+  s(:begin,
+    s(:send,
+      s(:const, nil, :ENV), :cflags)))]
++++ (handle_send)
+(install) handle_symbol: system | [s(:str, "make"), s(:dstr,
+  s(:str, "CFLAGS="),
+  s(:begin,
+    s(:send,
+      s(:const, nil, :ENV), :cflags)))]
+handle_symbol => Symbol system => [s(:str, "make"), s(:dstr,
+  s(:str, "CFLAGS="),
+  s(:begin,
+    s(:send,
+      s(:const, nil, :ENV), :cflags)))]
+(install) handle_child: [s(:str, "make"), s(:dstr,
+  s(:str, "CFLAGS="),
+  s(:begin,
+    s(:send,
+      s(:const, nil, :ENV), :cflags)))]
+(install) handle_child: (str "make")
+handle_child +++ make | str | (str "make")
+(install) handle_child: (dstr
+  (str "CFLAGS=")
+  (begin
+    (send
+      (const nil :ENV) :cflags)))
+(install) handle_child: (dstr
+  (str "CFLAGS=")
+  (begin
+    (send
+      (const nil :ENV) :cflags)))
+(install) handle_child: (str "CFLAGS=")
+handle_child +++ CFLAGS= | str | (str "CFLAGS=")
+(install) handle_child: (begin
+  (send
+    (const nil :ENV) :cflags))
+(install) handle_child: [s(:send,
+  s(:const, nil, :ENV), :cflags)]
+(install) handle_child: (send
+  (const nil :ENV) :cflags)
+(install) handle_send: (const nil :ENV) | [:cflags]
++++ (handle_send)
+(install) handle_symbol: (const nil :ENV) | [:cflags]
+(install) handle_child: (const nil :ENV)
+handle_child +++ ENV | const | (const nil :ENV)
+handle_symbol => Symbol ENV => [:cflags]
+(install) handle_child: 
+handle_symbol: result => cflags
+	 =>  / []
+(handle_send) result: cflags
+handle_child +++ cflags | send | (send
+  (const nil :ENV) :cflags)
+handle_child +++ [:cflags] | begin | (begin
+  (send
+    (const nil :ENV) :cflags))
+handle_child +++ ["CFLAGS=", [:cflags]] | dstr | (dstr
+  (str "CFLAGS=")
+  (begin
+    (send
+      (const nil :ENV) :cflags)))
+handle_symbol: result => {:system=>["make", ["CFLAGS=", [:cflags]]]}
+	 => [s(:str, "make"), s(:dstr,
+  s(:str, "CFLAGS="),
+  s(:begin,
+    s(:send,
+      s(:const, nil, :ENV), :cflags)))] / ["make", ["CFLAGS=", [:cflags]]]
+(handle_send) result: {:system=>["make", ["CFLAGS=", [:cflags]]]}
+on_send: (send nil :system
+  (str "make")
+  (str "install"))
+(install) handle_send: system | [s(:str, "make"), s(:str, "install")]
++++ (handle_send)
+(install) handle_symbol: system | [s(:str, "make"), s(:str, "install")]
+handle_symbol => Symbol system => [s(:str, "make"), s(:str, "install")]
+(install) handle_child: [s(:str, "make"), s(:str, "install")]
+(install) handle_child: (str "make")
+handle_child +++ make | str | (str "make")
+(install) handle_child: (str "install")
+handle_child +++ install | str | (str "install")
+handle_symbol: result => {:system=>["make", "install"]}
+	 => [s(:str, "make"), s(:str, "install")] / ["make", "install"]
+(handle_send) result: {:system=>["make", "install"]}
+handle_block: (send
+  (array
+    (str "apropos")
+    (str "catman")
+    (str "lexgrog")
+    (str "man")
+    (str "mandb")
+    (str "manpath")
+    (str "whatis")) :each) | (args
+  (arg :cmd)
+  (arg :foo)) | [s(:send,
+  s(:begin,
+    s(:send,
+      s(:send, nil, :libexec), :/,
+      s(:str, "bin"))), :install_symlink,
+  s(:hash,
+    s(:pair,
+      s(:send,
+        s(:send, nil, :bin), :/,
+        s(:dstr,
+          s(:str, "g"),
+          s(:begin,
+            s(:lvar, :cmd)))),
+      s(:lvar, :cmd))))]
+=> array | [s(:arg, :cmd), s(:arg, :foo)] | send
+(install) handle_array: (send
+  (array
+    (str "apropos")
+    (str "catman")
+    (str "lexgrog")
+    (str "man")
+    (str "mandb")
+    (str "manpath")
+    (str "whatis")) :each) | (send
+  (begin
+    (send
+      (send nil :libexec) :/
+      (str "bin"))) :install_symlink
+  (hash
+    (pair
+      (send
+        (send nil :bin) :/
+        (dstr
+          (str "g")
+          (begin
+            (lvar :cmd))))
+      (lvar :cmd))))
+(install) handle_child: (array
+  (str "apropos")
+  (str "catman")
+  (str "lexgrog")
+  (str "man")
+  (str "mandb")
+  (str "manpath")
+  (str "whatis"))
+(install) handle_child: (str "apropos")
+handle_child +++ apropos | str | (str "apropos")
+(install) handle_child: (str "catman")
+handle_child +++ catman | str | (str "catman")
+(install) handle_child: (str "lexgrog")
+handle_child +++ lexgrog | str | (str "lexgrog")
+(install) handle_child: (str "man")
+handle_child +++ man | str | (str "man")
+(install) handle_child: (str "mandb")
+handle_child +++ mandb | str | (str "mandb")
+(install) handle_child: (str "manpath")
+handle_child +++ manpath | str | (str "manpath")
+(install) handle_child: (str "whatis")
+handle_child +++ whatis | str | (str "whatis")
+on_send: (send
+  (begin
+    (send
+      (send nil :libexec) :/
+      (str "sbin"))) :install_symlink
+  (hash
+    (pair
+      (send
+        (send nil :sbin) :/
+        (str "gaccessdb"))
+      (str "accessdb"))))
+(install) handle_send: (begin
+  (send
+    (send nil :libexec) :/
+    (str "sbin"))) | [:install_symlink, s(:hash,
+  s(:pair,
+    s(:send,
+      s(:send, nil, :sbin), :/,
+      s(:str, "gaccessdb")),
+    s(:str, "accessdb")))]
++++ (handle_send)
+(install) handle_child: (send
+  (begin
+    (send
+      (send nil :libexec) :/
+      (str "sbin"))) :install_symlink
+  (hash
+    (pair
+      (send
+        (send nil :sbin) :/
+        (str "gaccessdb"))
+      (str "accessdb"))))
+(install) handle_child: (begin
+  (send
+    (send nil :libexec) :/
+    (str "sbin")))
+(install) handle_child: [s(:send,
+  s(:send, nil, :libexec), :/,
+  s(:str, "sbin"))]
+(install) handle_child: (send
+  (send nil :libexec) :/
+  (str "sbin"))
+(install) handle_send: (send nil :libexec) | [:/, s(:str, "sbin")]
++++ (handle_send)
+(install) handle_child: (send
+  (send nil :libexec) :/
+  (str "sbin"))
+(install) handle_child: (send nil :libexec)
+(install) handle_send: libexec | []
++++ (handle_send)
+(install) handle_symbol: libexec | []
+handle_symbol => Symbol libexec => []
+(install) handle_child: 
+handle_symbol: result => libexec
+	 =>  / []
+(handle_send) result: libexec
+handle_child +++ libexec | send | (send nil :libexec)
+(install) handle_child: /
+(install) handle_symbol: / | 
+handle_symbol => Symbol / => 
+(install) handle_child: 
+handle_symbol: result => /
+	 =>  / []
+handle_child +++ / | symbol | /
+(install) handle_child: (str "sbin")
+handle_child +++ sbin | str | (str "sbin")
+(handle_send) result: [:libexec, :/, "sbin"]
+handle_child +++ [:libexec, :/, "sbin"] | send | (send
+  (send nil :libexec) :/
+  (str "sbin"))
+handle_child +++ [[:libexec, :/, "sbin"]] | begin | (begin
+  (send
+    (send nil :libexec) :/
+    (str "sbin")))
+(install) handle_child: install_symlink
+(install) handle_symbol: install_symlink | 
+handle_symbol => Symbol install_symlink => 
+(install) handle_child: 
+handle_symbol: result => install_symlink
+	 =>  / []
+handle_child +++ install_symlink | symbol | install_symlink
+(install) handle_child: (hash
+  (pair
+    (send
+      (send nil :sbin) :/
+      (str "gaccessdb"))
+    (str "accessdb")))
+(install) handle_child: (hash
+  (pair
+    (send
+      (send nil :sbin) :/
+      (str "gaccessdb"))
+    (str "accessdb")))
+(install) handle_child: (pair
+  (send
+    (send nil :sbin) :/
+    (str "gaccessdb"))
+  (str "accessdb"))
+(install) handle_child: (pair
+  (send
+    (send nil :sbin) :/
+    (str "gaccessdb"))
+  (str "accessdb"))
+(install) handle_child: (send
+  (send nil :sbin) :/
+  (str "gaccessdb"))
+(install) handle_send: (send nil :sbin) | [:/, s(:str, "gaccessdb")]
++++ (handle_send)
+(install) handle_child: (send
+  (send nil :sbin) :/
+  (str "gaccessdb"))
+(install) handle_child: (send nil :sbin)
+(install) handle_send: sbin | []
++++ (handle_send)
+(install) handle_symbol: sbin | []
+handle_symbol => Symbol sbin => []
+(install) handle_child: 
+handle_symbol: result => sbin
+	 =>  / []
+(handle_send) result: sbin
+handle_child +++ sbin | send | (send nil :sbin)
+(install) handle_child: /
+(install) handle_symbol: / | 
+handle_symbol => Symbol / => 
+(install) handle_child: 
+handle_symbol: result => /
+	 =>  / []
+handle_child +++ / | symbol | /
+(install) handle_child: (str "gaccessdb")
+handle_child +++ gaccessdb | str | (str "gaccessdb")
+(handle_send) result: [:sbin, :/, "gaccessdb"]
+handle_child +++ [:sbin, :/, "gaccessdb"] | send | (send
+  (send nil :sbin) :/
+  (str "gaccessdb"))
+(install) handle_child: (str "accessdb")
+handle_child +++ accessdb | str | (str "accessdb")
+handle_child +++ [[:sbin, :/, "gaccessdb"], "accessdb"] | pair | (pair
+  (send
+    (send nil :sbin) :/
+    (str "gaccessdb"))
+  (str "accessdb"))
+handle_child +++ [[[:sbin, :/, "gaccessdb"], "accessdb"]] | hash | (hash
+  (pair
+    (send
+      (send nil :sbin) :/
+      (str "gaccessdb"))
+    (str "accessdb")))
+(handle_send) result: [[[:libexec, :/, "sbin"]], :install_symlink, [[[:sbin, :/, "gaccessdb"], "accessdb"]]]
+handle_block: (send
+  (array
+    (str "apropos")
+    (str "lexgrog")
+    (str "man")
+    (str "manconv")
+    (str "manpath")
+    (str "whatis")
+    (str "zsoelim")) :each) | (args
+  (arg :cmd)) | [s(:send,
+  s(:begin,
+    s(:send,
+      s(:send,
+        s(:send, nil, :libexec), :/,
+        s(:str, "man")), :/,
+      s(:str, "man1"))), :install_symlink,
+  s(:hash,
+    s(:pair,
+      s(:send,
+        s(:send, nil, :man1), :/,
+        s(:dstr,
+          s(:str, "g"),
+          s(:begin,
+            s(:lvar, :cmd)),
+          s(:str, ".1"))),
+      s(:dstr,
+        s(:begin,
+          s(:lvar, :cmd)),
+        s(:str, ".1")))))]
+=> array | [s(:arg, :cmd)] | send
+(install) handle_array: (send
+  (array
+    (str "apropos")
+    (str "lexgrog")
+    (str "man")
+    (str "manconv")
+    (str "manpath")
+    (str "whatis")
+    (str "zsoelim")) :each) | (send
+  (begin
+    (send
+      (send
+        (send nil :libexec) :/
+        (str "man")) :/
+      (str "man1"))) :install_symlink
+  (hash
+    (pair
+      (send
+        (send nil :man1) :/
+        (dstr
+          (str "g")
+          (begin
+            (lvar :cmd))
+          (str ".1")))
+      (dstr
+        (begin
+          (lvar :cmd))
+        (str ".1")))))
+(install) handle_child: (array
+  (str "apropos")
+  (str "lexgrog")
+  (str "man")
+  (str "manconv")
+  (str "manpath")
+  (str "whatis")
+  (str "zsoelim"))
+(install) handle_child: (str "apropos")
+handle_child +++ apropos | str | (str "apropos")
+(install) handle_child: (str "lexgrog")
+handle_child +++ lexgrog | str | (str "lexgrog")
+(install) handle_child: (str "man")
+handle_child +++ man | str | (str "man")
+(install) handle_child: (str "manconv")
+handle_child +++ manconv | str | (str "manconv")
+(install) handle_child: (str "manpath")
+handle_child +++ manpath | str | (str "manpath")
+(install) handle_child: (str "whatis")
+handle_child +++ whatis | str | (str "whatis")
+(install) handle_child: (str "zsoelim")
+handle_child +++ zsoelim | str | (str "zsoelim")
+on_send: (send
+  (begin
+    (send
+      (send
+        (send nil :libexec) :/
+        (str "man")) :/
+      (str "man5"))) :install_symlink
+  (hash
+    (pair
+      (send
+        (send nil :man5) :/
+        (str "gmanpath.5"))
+      (str "manpath.5"))))
+(install) handle_send: (begin
+  (send
+    (send
+      (send nil :libexec) :/
+      (str "man")) :/
+    (str "man5"))) | [:install_symlink, s(:hash,
+  s(:pair,
+    s(:send,
+      s(:send, nil, :man5), :/,
+      s(:str, "gmanpath.5")),
+    s(:str, "manpath.5")))]
++++ (handle_send)
+(install) handle_child: (send
+  (begin
+    (send
+      (send
+        (send nil :libexec) :/
+        (str "man")) :/
+      (str "man5"))) :install_symlink
+  (hash
+    (pair
+      (send
+        (send nil :man5) :/
+        (str "gmanpath.5"))
+      (str "manpath.5"))))
+(install) handle_child: (begin
+  (send
+    (send
+      (send nil :libexec) :/
+      (str "man")) :/
+    (str "man5")))
+(install) handle_child: [s(:send,
+  s(:send,
+    s(:send, nil, :libexec), :/,
+    s(:str, "man")), :/,
+  s(:str, "man5"))]
+(install) handle_child: (send
+  (send
+    (send nil :libexec) :/
+    (str "man")) :/
+  (str "man5"))
+(install) handle_send: (send
+  (send nil :libexec) :/
+  (str "man")) | [:/, s(:str, "man5")]
++++ (handle_send)
+(install) handle_child: (send
+  (send
+    (send nil :libexec) :/
+    (str "man")) :/
+  (str "man5"))
+(install) handle_child: (send
+  (send nil :libexec) :/
+  (str "man"))
+(install) handle_send: (send nil :libexec) | [:/, s(:str, "man")]
++++ (handle_send)
+(install) handle_child: (send
+  (send nil :libexec) :/
+  (str "man"))
+(install) handle_child: (send nil :libexec)
+(install) handle_send: libexec | []
++++ (handle_send)
+(install) handle_symbol: libexec | []
+handle_symbol => Symbol libexec => []
+(install) handle_child: 
+handle_symbol: result => libexec
+	 =>  / []
+(handle_send) result: libexec
+handle_child +++ libexec | send | (send nil :libexec)
+(install) handle_child: /
+(install) handle_symbol: / | 
+handle_symbol => Symbol / => 
+(install) handle_child: 
+handle_symbol: result => /
+	 =>  / []
+handle_child +++ / | symbol | /
+(install) handle_child: (str "man")
+handle_child +++ man | str | (str "man")
+(handle_send) result: [:libexec, :/, "man"]
+handle_child +++ [:libexec, :/, "man"] | send | (send
+  (send nil :libexec) :/
+  (str "man"))
+(install) handle_child: /
+(install) handle_symbol: / | 
+handle_symbol => Symbol / => 
+(install) handle_child: 
+handle_symbol: result => /
+	 =>  / []
+handle_child +++ / | symbol | /
+(install) handle_child: (str "man5")
+handle_child +++ man5 | str | (str "man5")
+(handle_send) result: [[:libexec, :/, "man"], :/, "man5"]
+handle_child +++ [[:libexec, :/, "man"], :/, "man5"] | send | (send
+  (send
+    (send nil :libexec) :/
+    (str "man")) :/
+  (str "man5"))
+handle_child +++ [[[:libexec, :/, "man"], :/, "man5"]] | begin | (begin
+  (send
+    (send
+      (send nil :libexec) :/
+      (str "man")) :/
+    (str "man5")))
+(install) handle_child: install_symlink
+(install) handle_symbol: install_symlink | 
+handle_symbol => Symbol install_symlink => 
+(install) handle_child: 
+handle_symbol: result => install_symlink
+	 =>  / []
+handle_child +++ install_symlink | symbol | install_symlink
+(install) handle_child: (hash
+  (pair
+    (send
+      (send nil :man5) :/
+      (str "gmanpath.5"))
+    (str "manpath.5")))
+(install) handle_child: (hash
+  (pair
+    (send
+      (send nil :man5) :/
+      (str "gmanpath.5"))
+    (str "manpath.5")))
+(install) handle_child: (pair
+  (send
+    (send nil :man5) :/
+    (str "gmanpath.5"))
+  (str "manpath.5"))
+(install) handle_child: (pair
+  (send
+    (send nil :man5) :/
+    (str "gmanpath.5"))
+  (str "manpath.5"))
+(install) handle_child: (send
+  (send nil :man5) :/
+  (str "gmanpath.5"))
+(install) handle_send: (send nil :man5) | [:/, s(:str, "gmanpath.5")]
++++ (handle_send)
+(install) handle_child: (send
+  (send nil :man5) :/
+  (str "gmanpath.5"))
+(install) handle_child: (send nil :man5)
+(install) handle_send: man5 | []
++++ (handle_send)
+(install) handle_symbol: man5 | []
+handle_symbol => Symbol man5 => []
+(install) handle_child: 
+handle_symbol: result => man5
+	 =>  / []
+(handle_send) result: man5
+handle_child +++ man5 | send | (send nil :man5)
+(install) handle_child: /
+(install) handle_symbol: / | 
+handle_symbol => Symbol / => 
+(install) handle_child: 
+handle_symbol: result => /
+	 =>  / []
+handle_child +++ / | symbol | /
+(install) handle_child: (str "gmanpath.5")
+handle_child +++ gmanpath.5 | str | (str "gmanpath.5")
+(handle_send) result: [:man5, :/, "gmanpath.5"]
+handle_child +++ [:man5, :/, "gmanpath.5"] | send | (send
+  (send nil :man5) :/
+  (str "gmanpath.5"))
+(install) handle_child: (str "manpath.5")
+handle_child +++ manpath.5 | str | (str "manpath.5")
+handle_child +++ [[:man5, :/, "gmanpath.5"], "manpath.5"] | pair | (pair
+  (send
+    (send nil :man5) :/
+    (str "gmanpath.5"))
+  (str "manpath.5"))
+handle_child +++ [[[:man5, :/, "gmanpath.5"], "manpath.5"]] | hash | (hash
+  (pair
+    (send
+      (send nil :man5) :/
+      (str "gmanpath.5"))
+    (str "manpath.5")))
+(handle_send) result: [[[[:libexec, :/, "man"], :/, "man5"]], :install_symlink, [[[:man5, :/, "gmanpath.5"], "manpath.5"]]]
+handle_block: (send
+  (array
+    (str "accessdb")
+    (str "catman")
+    (str "mandb")) :each) | (args
+  (arg :cmd)) | [s(:send,
+  s(:begin,
+    s(:send,
+      s(:send,
+        s(:send, nil, :libexec), :/,
+        s(:str, "man")), :/,
+      s(:str, "man8"))), :install_symlink,
+  s(:hash,
+    s(:pair,
+      s(:send,
+        s(:send, nil, :man8), :/,
+        s(:dstr,
+          s(:str, "g"),
+          s(:begin,
+            s(:lvar, :cmd)),
+          s(:str, ".8"))),
+      s(:dstr,
+        s(:begin,
+          s(:lvar, :cmd)),
+        s(:str, ".8")))))]
+=> array | [s(:arg, :cmd)] | send
+(install) handle_array: (send
+  (array
+    (str "accessdb")
+    (str "catman")
+    (str "mandb")) :each) | (send
+  (begin
+    (send
+      (send
+        (send nil :libexec) :/
+        (str "man")) :/
+      (str "man8"))) :install_symlink
+  (hash
+    (pair
+      (send
+        (send nil :man8) :/
+        (dstr
+          (str "g")
+          (begin
+            (lvar :cmd))
+          (str ".8")))
+      (dstr
+        (begin
+          (lvar :cmd))
+        (str ".8")))))
+(install) handle_child: (array
+  (str "accessdb")
+  (str "catman")
+  (str "mandb"))
+(install) handle_child: (str "accessdb")
+handle_child +++ accessdb | str | (str "accessdb")
+(install) handle_child: (str "catman")
+handle_child +++ catman | str | (str "catman")
+(install) handle_child: (str "mandb")
+handle_child +++ mandb | str | (str "mandb")
+handle_block: (send
+  (array
+    (str "catman")
+    (str "lexgrog")
+    (str "mandb")) :each) | (args
+  (arg :cmd)) | [s(:send,
+  s(:send, nil, :bin), :install_symlink,
+  s(:hash,
+    s(:pair,
+      s(:dstr,
+        s(:str, "g"),
+        s(:begin,
+          s(:lvar, :cmd))),
+      s(:lvar, :cmd))))]
+=> array | [s(:arg, :cmd)] | send
+(install) handle_array: (send
+  (array
+    (str "catman")
+    (str "lexgrog")
+    (str "mandb")) :each) | (send
+  (send nil :bin) :install_symlink
+  (hash
+    (pair
+      (dstr
+        (str "g")
+        (begin
+          (lvar :cmd)))
+      (lvar :cmd))))
+(install) handle_child: (array
+  (str "catman")
+  (str "lexgrog")
+  (str "mandb"))
+(install) handle_child: (str "catman")
+handle_child +++ catman | str | (str "catman")
+(install) handle_child: (str "lexgrog")
+handle_child +++ lexgrog | str | (str "lexgrog")
+(install) handle_child: (str "mandb")
+handle_child +++ mandb | str | (str "mandb")
+on_send: (send
+  (send nil :sbin) :install_symlink
+  (hash
+    (pair
+      (str "gaccessdb")
+      (str "accessdb"))))
+(install) handle_send: (send nil :sbin) | [:install_symlink, s(:hash,
+  s(:pair,
+    s(:str, "gaccessdb"),
+    s(:str, "accessdb")))]
++++ (handle_send)
+(install) handle_child: (send
+  (send nil :sbin) :install_symlink
+  (hash
+    (pair
+      (str "gaccessdb")
+      (str "accessdb"))))
+(install) handle_child: (send nil :sbin)
+(install) handle_send: sbin | []
++++ (handle_send)
+(install) handle_symbol: sbin | []
+handle_symbol => Symbol sbin => []
+(install) handle_child: 
+handle_symbol: result => sbin
+	 =>  / []
+(handle_send) result: sbin
+handle_child +++ sbin | send | (send nil :sbin)
+(install) handle_child: install_symlink
+(install) handle_symbol: install_symlink | 
+handle_symbol => Symbol install_symlink => 
+(install) handle_child: 
+handle_symbol: result => install_symlink
+	 =>  / []
+handle_child +++ install_symlink | symbol | install_symlink
+(install) handle_child: (hash
+  (pair
+    (str "gaccessdb")
+    (str "accessdb")))
+(install) handle_child: (hash
+  (pair
+    (str "gaccessdb")
+    (str "accessdb")))
+(install) handle_child: (pair
+  (str "gaccessdb")
+  (str "accessdb"))
+(install) handle_child: (pair
+  (str "gaccessdb")
+  (str "accessdb"))
+(install) handle_child: (str "gaccessdb")
+handle_child +++ gaccessdb | str | (str "gaccessdb")
+(install) handle_child: (str "accessdb")
+handle_child +++ accessdb | str | (str "accessdb")
+handle_child +++ ["gaccessdb", "accessdb"] | pair | (pair
+  (str "gaccessdb")
+  (str "accessdb"))
+handle_child +++ [["gaccessdb", "accessdb"]] | hash | (hash
+  (pair
+    (str "gaccessdb")
+    (str "accessdb")))
+(handle_send) result: [:sbin, :install_symlink, [["gaccessdb", "accessdb"]]]
+handle_block: (send
+  (array
+    (str "accessdb")
+    (str "catman")
+    (str "mandb")) :each) | (args
+  (arg :cmd)) | [s(:send,
+  s(:send, nil, :man8), :install_symlink,
+  s(:hash,
+    s(:pair,
+      s(:dstr,
+        s(:str, "g"),
+        s(:begin,
+          s(:lvar, :cmd)),
+        s(:str, ".8")),
+      s(:dstr,
+        s(:begin,
+          s(:lvar, :cmd)),
+        s(:str, ".8")))))]
+=> array | [s(:arg, :cmd)] | send
+(install) handle_array: (send
+  (array
+    (str "accessdb")
+    (str "catman")
+    (str "mandb")) :each) | (send
+  (send nil :man8) :install_symlink
+  (hash
+    (pair
+      (dstr
+        (str "g")
+        (begin
+          (lvar :cmd))
+        (str ".8"))
+      (dstr
+        (begin
+          (lvar :cmd))
+        (str ".8")))))
+(install) handle_child: (array
+  (str "accessdb")
+  (str "catman")
+  (str "mandb"))
+(install) handle_child: (str "accessdb")
+handle_child +++ accessdb | str | (str "accessdb")
+(install) handle_child: (str "catman")
+handle_child +++ catman | str | (str "catman")
+(install) handle_child: (str "mandb")
+handle_child +++ mandb | str | (str "mandb")
+on_send: (send
+  (send nil :man1) :install_symlink
+  (hash
+    (pair
+      (str "glexgrog.1")
+      (str "lexgrog.1"))))
+(install) handle_send: (send nil :man1) | [:install_symlink, s(:hash,
+  s(:pair,
+    s(:str, "glexgrog.1"),
+    s(:str, "lexgrog.1")))]
++++ (handle_send)
+(install) handle_child: (send
+  (send nil :man1) :install_symlink
+  (hash
+    (pair
+      (str "glexgrog.1")
+      (str "lexgrog.1"))))
+(install) handle_child: (send nil :man1)
+(install) handle_send: man1 | []
++++ (handle_send)
+(install) handle_symbol: man1 | []
+handle_symbol => Symbol man1 => []
+(install) handle_child: 
+handle_symbol: result => man1
+	 =>  / []
+(handle_send) result: man1
+handle_child +++ man1 | send | (send nil :man1)
+(install) handle_child: install_symlink
+(install) handle_symbol: install_symlink | 
+handle_symbol => Symbol install_symlink => 
+(install) handle_child: 
+handle_symbol: result => install_symlink
+	 =>  / []
+handle_child +++ install_symlink | symbol | install_symlink
+(install) handle_child: (hash
+  (pair
+    (str "glexgrog.1")
+    (str "lexgrog.1")))
+(install) handle_child: (hash
+  (pair
+    (str "glexgrog.1")
+    (str "lexgrog.1")))
+(install) handle_child: (pair
+  (str "glexgrog.1")
+  (str "lexgrog.1"))
+(install) handle_child: (pair
+  (str "glexgrog.1")
+  (str "lexgrog.1"))
+(install) handle_child: (str "glexgrog.1")
+handle_child +++ glexgrog.1 | str | (str "glexgrog.1")
+(install) handle_child: (str "lexgrog.1")
+handle_child +++ lexgrog.1 | str | (str "lexgrog.1")
+handle_child +++ ["glexgrog.1", "lexgrog.1"] | pair | (pair
+  (str "glexgrog.1")
+  (str "lexgrog.1"))
+handle_child +++ [["glexgrog.1", "lexgrog.1"]] | hash | (hash
+  (pair
+    (str "glexgrog.1")
+    (str "lexgrog.1")))
+(handle_send) result: [:man1, :install_symlink, [["glexgrog.1", "lexgrog.1"]]]
+[nil, {"libpipeline_CFLAGS"=>[["-I", [:buildpath], "/libpipeline/include"]]}, {"libpipeline_LIBS"=>[["-L", [:buildpath], "/libpipeline/lib -lpipeline"]]}, {"args"=>["--disable-dependency-tracking", "--disable-silent-rules", ["--prefix=", [:prefix]], "--disable-cache-owner", "--disable-setuid", "--program-prefix=g"]}, ["[:args]", "+=", ["--fetch", "protobuf"]], {"foo"=>["bar"]}, {:system=>["./configure", [:args]]}, {:system=>["make", ["CFLAGS=", [:cflags]]]}, {:system=>["make", "install"]}, nil, [[[:libexec, :/, "sbin"]], :install_symlink, [[[:sbin, :/, "gaccessdb"], "accessdb"]]], nil, [[[[:libexec, :/, "man"], :/, "man5"]], :install_symlink, [[[:man5, :/, "gmanpath.5"], "manpath.5"]]], nil, nil, [:sbin, :install_symlink, [["gaccessdb", "accessdb"]]], nil, [:man1, :install_symlink, [["glexgrog.1", "lexgrog.1"]]]]
